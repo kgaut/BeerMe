@@ -8,10 +8,10 @@
  * Controller of the beermeApp
  */
 angular.module('beermeApp')
-  .controller('ListCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ListCtrl', function ($scope,Beer) {
+    $scope.beers = Beer.getBeers();
+
+    $scope.getBeerColor = function(index) {
+      return Beer.getBeerColor(index);
+    }
   });

@@ -1,1 +1,4 @@
-<p>This is the list view.</p>
+<h1>Liste de toutes les bières</h1>
+<ul>
+  <li ng-repeat="oneBeer in beers">{{oneBeer.name}} <em>{{getBeerColor(oneBeer.color).name}}</em></li>
+</ul>
