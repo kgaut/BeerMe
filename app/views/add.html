@@ -1,7 +1,10 @@
 <form id="addBeer">
-  <p><label for="name">Nom de la bière</label><input required="required" ng-required="required" id="name" name="name" /></p>
-  <p><label for="couleur">Couleur</label>
-    <select id="couleur">
+  <p>
+    <label for="name">Nom de la bière</label>
+    <input ng-model="formBeer.name" required="required" ng-required="required" id="name" name="name" />
+  </p>
+  <p><label for="color">Couleur</label>
+    <select ng-model="formBeer.color" id="color" name="color">
       <option ng-repeat="couleur in beerColors" value="{{couleur.cid}}">{{couleur.name}}</option>
     </select>
   </p>

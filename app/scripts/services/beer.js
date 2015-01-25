@@ -21,6 +21,15 @@ angular.module('beermeApp')
       {cid : 4,name : 'Blanche',machineName : 'blanche'},
       {cid : 5,name : 'Dunkel',machineName : 'dunkel'},
     ];
+
+    var isBeer = function (beer) {
+      return beer.name != undefined &&
+              beer.name.trim() !='' &&
+              beer.color != undefined &&
+              !isNaN(beer.color) &&
+              getBeerColor(beer.color) != undefined;
+
+    };
     var getBeerColors = function() {
       return beerColors;
     };
@@ -31,6 +40,9 @@ angular.module('beermeApp')
       return beers;
     };
     var addBeer = function(beer) {
+      if(beer.cid == undefined) {
+        beer.cid = beers.length;
+      }
       beers.push(beer);
     }
 
@@ -38,6 +50,7 @@ angular.module('beermeApp')
       getBeerColors: getBeerColors,
       getBeerColor: getBeerColor,
       getBeers: getBeers,
-      addBeer: addBeer
+      addBeer: addBeer,
+      isBeer: isBeer
     };
   });
