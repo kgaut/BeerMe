@@ -8,7 +8,7 @@
  * Service in the beermeApp.
  */
 angular.module('beermeApp')
-  .service('Beer', function () {
+  .service('Beer', function ($q) {
     var beers = [
       {bid : 1, name : 'Grimbergen', color: 1 },
       {bid : 2, name : 'Saint Thomas', color: 1 }
@@ -23,11 +23,11 @@ angular.module('beermeApp')
     ];
 
     var isBeer = function (beer) {
-      return beer.name != undefined &&
-              beer.name.trim() !='' &&
-              beer.color != undefined &&
+      return beer.name !== undefined &&
+              beer.name.trim() !=='' &&
+              beer.color !== undefined &&
               !isNaN(beer.color) &&
-              getBeerColor(beer.color) != undefined;
+              getBeerColor(beer.color) !== undefined;
 
     };
     var getBeerColors = function() {
@@ -37,14 +37,24 @@ angular.module('beermeApp')
       return beerColors[index];
     };
     var getBeers = function() {
+      console.log(beers);
       return beers;
     };
-    var addBeer = function(beer) {
-      if(beer.cid == undefined) {
-        beer.cid = beers.length;
+    var addBeer = function(beerToAdd,callback) {
+      var l = beers.length;
+      var newBeer = {};
+      if(beerToAdd.bid === undefined) {
+        newBeer.bid = l+1;
       }
-      beers.push(beer);
-    }
+      else {
+        newBeer.bid = beerToAdd.bid;
+      }
+      newBeer.color = parseInt(beerToAdd.color);
+      newBeer.name = beerToAdd.name.trim();
+
+      beers.push(newBeer);
+      callback((l+1) === beers.length);
+    };
 
     return {
       getBeerColors: getBeerColors,

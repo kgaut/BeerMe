@@ -13,5 +13,5 @@ angular.module('beermeApp')
 
     $scope.getBeerColor = function(index) {
       return Beer.getBeerColor(index);
-    }
+    };
   });
