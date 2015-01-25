@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'cgNotify'
+    'cgNotify',
+    'LocalStorageModule'
   ])
   .config(function ($routeProvider) {
     $routeProvider
