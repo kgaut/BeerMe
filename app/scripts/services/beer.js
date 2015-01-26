@@ -10,6 +10,11 @@
 angular.module('beermeApp')
   .service('Beer', function (localStorageService) {
     var beers = localStorageService.get('beers');
+
+    var saveBeers = function() {
+      localStorageService.set('beers', beers);
+    };
+
     if(beers == undefined) {
       beers = [];
       saveBeers();
@@ -23,10 +28,6 @@ angular.module('beermeApp')
       {cid : 5,name : 'Dunkel',machineName : 'dunkel'},
     ];
 
-    var saveBeers = function() {
-      localStorageService.set('beers', beers);
-
-    }
 
     var isBeer = function (beer) {
       return beer.name !== undefined &&
@@ -66,6 +67,7 @@ angular.module('beermeApp')
       getBeerColors: getBeerColors,
       getBeerColor: getBeerColor,
       getBeers: getBeers,
+      saveBeers: saveBeers,
       addBeer: addBeer,
       isBeer: isBeer
     };
