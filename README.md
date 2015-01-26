@@ -14,4 +14,5 @@ Node, npm, Grunt, Bower
 git clone https://github.com/kgaut/BeerMe.git
 cd BeerMe
 npm install
+bower install
 ```
