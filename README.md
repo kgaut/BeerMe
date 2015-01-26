@@ -16,3 +16,10 @@ cd BeerMe
 npm install
 bower install
 ```
+
+## Lancement du serveur
+```
+grunt serve
+```
+
+et normalement, c'est parti ! 
