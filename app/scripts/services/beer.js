@@ -66,11 +66,13 @@ angular.module('beermeApp')
       callback((l+1) === beers.length);
     };
 
-    var deleteBeer = function(index) {
+    var deleteBeer = function(index,callback) {
+      var l = beers.length;
       if(beers[index] !== undefined) {
-        beers[index] = null;
+        beers.splice(index,1);
       }
       saveBeers();
+      callback((l-1) === beers.length);
     };
 
     return {

@@ -13,7 +13,6 @@ angular.module('beermeApp')
     $scope.addBeer = function() {
       if(Beer.isBeer($scope.formBeer)) {
         Beer.addBeer($scope.formBeer,function(data) {
-          console.log(data);
           if(data === true) {
             $scope.formBeer.name = '';
             $scope.formBeer.color = '';
