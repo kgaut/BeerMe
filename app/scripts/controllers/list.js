@@ -16,7 +16,7 @@ angular.module('beermeApp')
     };
 
     $scope.deleteBeer = function(index) {
-      Beer.deleteBeer(index, function() {
+      Beer.deleteBeer(index, function(data) {
         if(data === true) {
           notify('So saaad !');
         }

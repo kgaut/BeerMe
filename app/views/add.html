@@ -5,7 +5,7 @@
   </p>
   <p><label for="color">Couleur</label>
     <select ng-model="formBeer.color" id="color" name="color">
-      <option ng-repeat="couleur in beerColors" value="{{couleur.cid}}">{{couleur.name}}</option>
+      <option ng-repeat="couleur in beerColors" value="{{$index}}">{{couleur.name}}</option>
     </select>
   </p>
   <p>
