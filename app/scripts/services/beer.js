@@ -15,7 +15,7 @@ angular.module('beermeApp')
       localStorageService.set('beers', beers);
     };
 
-    if(beers == undefined) {
+    if(beers === undefined) {
       beers = [];
       saveBeers();
     }
@@ -28,7 +28,6 @@ angular.module('beermeApp')
       {cid : 5,name : 'Dunkel',machineName : 'dunkel'},
     ];
 
-
     var isBeer = function (beer) {
       return beer.name !== undefined &&
               beer.name.trim() !=='' &&
@@ -37,15 +36,19 @@ angular.module('beermeApp')
               getBeerColor(beer.color) !== undefined;
 
     };
+
     var getBeerColors = function() {
       return beerColors;
     };
+
     var getBeerColor = function(index) {
       return beerColors[index];
     };
+
     var getBeers = function() {
       return beers;
     };
+
     var addBeer = function(beerToAdd,callback) {
       var l = beers.length;
       var newBeer = {};
@@ -63,10 +66,18 @@ angular.module('beermeApp')
       callback((l+1) === beers.length);
     };
 
+    var deleteBeer = function(index) {
+      if(beers[index] !== undefined) {
+        beers[index] = null;
+      }
+      saveBeers();
+    };
+
     return {
       getBeerColors: getBeerColors,
       getBeerColor: getBeerColor,
       getBeers: getBeers,
+      deleteBeer: deleteBeer,
       saveBeers: saveBeers,
       addBeer: addBeer,
       isBeer: isBeer
