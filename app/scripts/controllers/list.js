@@ -8,7 +8,7 @@
  * Controller of the beermeApp
  */
 angular.module('beermeApp')
-  .controller('ListCtrl', function ($scope,Beer,notify) {
+  .controller('ListCtrl', function ($scope,Beer,notify,$location) {
     $scope.beers = Beer.getBeers();
 
     $scope.getBeerColor = function(index) {
@@ -23,6 +23,7 @@ angular.module('beermeApp')
         else {
           notify('There were an error !');
         }
+        $location.path('#/list');
       });
     };
   });
