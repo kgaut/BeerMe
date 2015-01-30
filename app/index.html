@@ -24,17 +24,17 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right" ng-controller="NavigationCtrl">
-          <li ng-class="{ active: isCurrentPath('/') }"><a ng-href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
+          <li ng-class="{ active: isCurrentPath('/') }"><a ng-href="#/"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
           <li ng-class="{ active: isCurrentPath('/list') }"><a ng-href="#/list"><span class="glyphicon glyphicon-list"></span>&nbsp;List</a></li>
           <li ng-class="{ active: isCurrentPath('/add') }"><a ng-href="#/add"><span class="glyphicon glyphicons-plus"></span>&nbsp;Add a beer</a></li>
         </ul>
-        <h3 class="text-muted">beerme</h3>
+        <h3 class="text-muted">BeerMe</h3>
       </div>
 
       <div ng-view=""></div>
 
       <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p>Made with <span class="glyphicon glyphicon-heart"></span> by <a href="http://www.kgaut.net">Kgaut</a>.</p>
       </div>
     </div>
 
@@ -69,6 +69,8 @@
         <script src="scripts/controllers/list.js"></script>
         <script src="scripts/services/beer.js"></script>
         <script src="scripts/controllers/navigation.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/register.js"></script>
         <!-- endbuild -->
 </body>
 </html>
