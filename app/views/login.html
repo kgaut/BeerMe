@@ -1,8 +1,15 @@
 <h1>Connection</h1>
 <p>Dernière ligne droite avant de déguster une bonne bière, la connection</p>
-<form>
-    <p><label for="mail">E-mail</label><input type="mail" id="mail" placeholder="Votre adresse email" /></p>
-    <p><label for="pass">Mot de passe</label><input type="password" id="pass" /></p>
-    <p><a class="btn btn-lg btn-success" ng-click="login()"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Zou !</a></p>
+<form  role="form">
+
+    <div class="form-group">
+        <label for="mail">E-mail</label>
+        <input class="form-control" type="mail" id="mail" placeholder="Votre adresse email" />
+    </div>
+    <div class="form-group">
+        <label for="pass">Mot de passe</label>
+        <input class="form-control" type="password" id="pass" />
+    </div>
+    <p><a type="submit" class="btn btn-lg btn-success" ng-click="login()"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Zou !</a>
 
 </form>
