@@ -1,15 +1,18 @@
-<form id="addBeer">
-  <p>
+<h1>Ajouter une bière</h1>
+<form id="addBeer" role="form">
+
+  <div class="form-group">
     <label for="name">Nom de la bière</label>
-    <input ng-model="formBeer.name" required="required" ng-required="required" id="name" name="name" />
-  </p>
-  <p><label for="color">Couleur</label>
-    <select ng-model="formBeer.color" id="color" name="color">
+    <input class="form-control" ng-model="formBeer.name" required="required" ng-required="required" id="name" name="name" />
+  </div>
+
+  <div class="form-group">
+    <label for="color">Couleur</label>
+    <select class="form-control" ng-model="formBeer.color" id="color" name="color">
       <option ng-repeat="couleur in beerColors" value="{{$index}}">{{couleur.name}}</option>
     </select>
-  </p>
+  </div>
   <p>
-    <button ng-click="addBeer()">Santé !</button>
+  <p><a type="submit" class="btn btn-lg btn-success" ng-click="addBeer()"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Sant&eacute; !</a>
   </p>
 </form>
-<p>This is the add view.</p>
