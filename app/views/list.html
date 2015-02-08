@@ -1,4 +1,9 @@
 <h1>Liste de toutes les bières</h1>
+<section ng-if="beers.length > 0">
 <ul>
   <li ng-repeat="oneBeer in beers">{{oneBeer.name}} <em>{{getBeerColor(oneBeer.color).name}}</em> <a href="#" ng-click="deleteBeer($index)">x</a></li>
 </ul>
+</section>
+<section ng-if="beers.length === 0">
+  <p>Oooh ? vous n'avez pas encore dégusté de bière ???</p>
+</section>
